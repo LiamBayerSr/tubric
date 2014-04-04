@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tubric</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+
+       <!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="bootstrap.min.css" />
+    <link rel="stylesheet" href="sticky.css" />
+    <style>
+
+</style>
+  </head>
+ 
+  <body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div style="float:right;margin-right:100px;">
+<% if user_signed_in? %>
+      <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+    <% else %>
+      <%= link_to "Sign up", new_user_registration_path %> | <%= link_to "Sign in", new_user_session_path %> |
+      <%=link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter) %>
+    <% end %>
+  </div>
+        <div class="container">
+          <a class="navbar-brand" href="#">Tubric</a>
+          
+
+          <div class="navbar-collapse collapse">
+            <!-- Left nav -->
+            <ul class="nav navbar-nav">
+              <li><a href="/questions">Driving Questions</a></li>
+                <li><a href="/questions/new">Create New DQ</a></li>
+                
+                
+                
+              
+      </ul>
+
+            
+             
+                
+              </div>
+          </div>
+        </div>
+
+    </div> 
+
+
+
+       
+
+<%= yield %>
+
+
+  
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<div class=wrapper style="width: 1000px">
+
+<div align="center" style="width:200px;position:absolute;left:370px;top:315px;z-index:-1;">
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div><%= f.label :email %><br />
+  <%= f.email_field :email, autofocus: true %></div>
+
+  <div><%= f.label :password %><br />
+    <%= f.password_field :password, autocomplete: "off" %></div>
+
+  <div><%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+
+
+
+  
+</div>
+
+<div style="width:200px;position:absolute;left:580px;top:350px;z-index:-1;">
+	<div style="margin-top:10px;margin-left:40px;"><%= f.submit "Sign up", :class=>"btn btn-primary" %></div>
+<% end %>
+<br><%= render "devise/shared/links" %>
+</div>
+
+<div align="center" style="position:absolute;left:155px;top:25px;z-index:-2;">
+<%= image_tag("tubric.png", :alt => "") %>
+</div>
+</div>
+

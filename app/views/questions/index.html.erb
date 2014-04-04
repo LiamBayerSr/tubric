@@ -1,0 +1,66 @@
+
+<div class=wrapper style="width: 1000px">
+
+
+<div style="width:400px;position:absolute;left:175px;top:75px;z-index:-1;">
+<p style= "font-size:24px;color: #428BCA;"> Here are the most recent Driving Questions.</p><hr>
+
+
+
+ 
+
+ 
+  <% @questions.each do |question| %>
+
+  <div >
+        <section ><p style= "font-size:20px;color: #428BCA;"><%= question.text %> <%= question.text1 %> <%= question.text2 %> <%= question.text3 %>?</p>
+</section>
+        <section ><p>Grade: <%= question.grade %> | Subject: <%= question.subject %></p>
+</section>
+        <section ><p style= "font-size:16px;color: #428BCA;">Rate this driving question:<br>
+        <%= rating_for question, "text", :star => 4 %>
+        </p>
+</section>
+        
+   </div>
+    
+      <hr>
+       
+
+     
+
+
+
+    
+  <% end %>
+</p>
+</div>
+
+<div style="width:400px;position:absolute;left:700px;top:75px;z-index:-1;">
+<p style= "font-size:24px;color: #428BCA;">Here are the most popular Driving Questions.</p>
+<hr>
+
+ 
+<p>
+ 
+  <% @questions_rate.each do |question| %>
+    
+      <p style= "font-size:20px;color: #428BCA;"><%= question.text %> <%= question.text1 %> <%= question.text2 %> <%= question.text3 %>?</p>
+      
+      <p>Grade: <%= question.grade %> | Subject: <%= question.subject %></p>
+      
+      <p style= "font-size:16px;color: #428BCA;">Rate this driving question:<br>
+        <%= rating_for question, "text", :star => 4 %>
+        </p>
+        <hr>
+
+    <% end %>
+</p>
+</div>
+
+
+</div>
+
+
+
+
